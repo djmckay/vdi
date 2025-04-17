@@ -3,7 +3,7 @@ import os
 
 import aws_cdk as cdk
 
-from disney.disney_stack import DisneyStack
+from cdk.disney_stack import DisneyStack
 
 
 app = cdk.App()
