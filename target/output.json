@@ -1,0 +1,7 @@
+{
+  "DisneyStack": {
+    "DSApiGatewayEndpoint3227F177": "https://0atsrj3jfb.execute-api.us-east-1.amazonaws.com/prod/",
+    "ApiEndpoint": "https://0atsrj3jfb.execute-api.us-east-1.amazonaws.com/prod/",
+    "DbSetupArn": "arn:aws:lambda:us-east-1:795091308067:function:DisneyStack-DSInitDBLambda7D4706D1-lM6MScCncalX"
+  }
+}
