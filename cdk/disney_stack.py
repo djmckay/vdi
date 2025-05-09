@@ -40,6 +40,8 @@ from aws_cdk.aws_iam import Role, ServicePrincipal, PolicyStatement
 
 # Function to generate a random API Key
 def generate_api_key(length=32):
+    # testing TODO
+    # this would need to be shared with the jira webhook creation
     return "hello world"
     # return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
@@ -62,13 +64,13 @@ class DisneyStack(Stack):
         queue = sqs.Queue(self, queueName)
 
         # Create the API GW service role with permissions to call SQS
-        rest_api_role = iam.Role(
-            self,
-            stackShortNamePrefix+"RestAPIRole",
-            assumed_by=iam.ServicePrincipal("apigateway.amazonaws.com"),
-            managed_policies=[iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSQSFullAccess")]
-        )
-        queue.grant_send_messages(rest_api_role)
+#         rest_api_role = iam.Role(
+#             self,
+#             stackShortNamePrefix+"RestAPIRole",
+#             assumed_by=iam.ServicePrincipal("apigateway.amazonaws.com"),
+#             managed_policies=[iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSQSFullAccess")]
+#         )
+#         queue.grant_send_messages(rest_api_role)
         # Create an API Gateway to receive Jira webhooks and send to SQS
         api = apigw.RestApi(self, apigwName)
 
